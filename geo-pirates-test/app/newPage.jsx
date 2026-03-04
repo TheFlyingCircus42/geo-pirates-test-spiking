@@ -1,5 +1,8 @@
+import React from "react";
 import { Text, View } from "react-native";
 import { Link } from "expo-router";
+import MapDisplay from "./components/MapDisplay";
+
 
 export default function NewPage() {
   return (
@@ -15,6 +18,9 @@ export default function NewPage() {
       <Link href="/">
         <Text>Index Page Link</Text>
       </Link>
+
+      <MapDisplay />
+
     </View>
   );
 }
