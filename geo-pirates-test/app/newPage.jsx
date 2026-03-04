@@ -1,7 +1,6 @@
 import { Text, View } from "react-native";
 import { Link } from "expo-router";
 
-
 export default function NewPage() {
   return (
     <View
@@ -13,13 +12,9 @@ export default function NewPage() {
     >
       <Text>NEW PAGE!</Text>
 
-      <Link href="/" >
-        <Text >
-          Index Page Link
-        </Text>
+      <Link href="/">
+        <Text>Index Page Link</Text>
       </Link>
-
-
     </View>
   );
 }

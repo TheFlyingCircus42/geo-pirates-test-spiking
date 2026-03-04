@@ -53,6 +53,12 @@ export default function Index() {
       >
         <Text>Screen no. 1</Text>
       </Link>
+      <Link
+        href="/testMapPage"
+        className="bg-teal-600 text-white px-3 py-1 rounded-xl active:scale-110 font-semibold"
+      >
+        <Text>Link to map page</Text>
+      </Link>
     </View>
   );
 }
