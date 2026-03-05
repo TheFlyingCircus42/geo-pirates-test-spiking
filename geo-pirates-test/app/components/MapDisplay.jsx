@@ -40,6 +40,17 @@ export default function MapDisplay() {
             title="You are here"
             description="Current location"
           />
+
+             
+
+
+            <Marker coordinate={{
+                latitude: 51.57555682599006,
+                longitude: -0.11662832475992536
+            }} 
+            title ="X marks the spot"
+            description = "there may be treasure here"/>
+
         </MapView>
       )}
     </View>

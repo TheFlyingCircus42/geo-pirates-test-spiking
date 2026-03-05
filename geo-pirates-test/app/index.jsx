@@ -47,18 +47,30 @@ export default function Index() {
       <Link href="/newPage">
         <Text>New Page Link</Text>
       </Link>
+
+         <Link href="/LiveLocPage">
+        <Text> Live Location Tracker </Text>
+      </Link>
+
+        <Link href="/TestMap01Page">
+        <Text> Tet Map 01 </Text>
+      </Link>
+
       <Link
         href="/testpage"
         className="bg-teal-600 text-white px-3 py-1 rounded-xl active:scale-110 font-semibold"
       >
         <Text>Screen no. 1</Text>
       </Link>
+
+
       <Link
         href="/testMapPage"
         className="bg-teal-600 text-white px-3 py-1 rounded-xl active:scale-110 font-semibold"
       >
         <Text>Link to map page</Text>
       </Link>
+      
     </View>
   );
 }
