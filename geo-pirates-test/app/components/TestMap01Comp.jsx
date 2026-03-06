@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import {Text, View, StyleSheet, Dimensions } from "react-native";
-import MapView, { Marker, Circle } from "react-native-maps";
+import MapView, { Marker, Circle, Polygon } from "react-native-maps";
 import * as Location from "expo-location";
 
 export default function TestMap01()
@@ -37,6 +37,19 @@ export default function TestMap01()
                     }
             );
         }
+
+        let inBox = false;
+
+if (location) {
+  if (
+    location.latitude < 51.57752793530087 &&
+    location.latitude > 51.57696119513244 &&
+    location.longitude > -0.11025236697706796 &&
+    location.longitude < -0.10914729691404394
+  ) {
+    inBox = true;
+  }
+}
 
     return(<View>
         <View>
@@ -76,9 +89,48 @@ export default function TestMap01()
                 strokeColor="rgb(19, 21, 6)"
                 fillColor="rgba(241, 255, 112, 0.33)"/>
 
+
+                <Marker
+                coordinate={{latitude: 51.576554471358136, longitude: -0.1123659476897354}}
+                title="This is treasure"
+                pinColor="yellow" />
+
+                <Circle 
+                center={{latitude: 51.576554471358136, longitude: -0.1123659476897354}}
+                radius={50}
+                strokeWidth={2}
+                strokeColor="rgb(19, 21, 6)"
+                fillColor="rgba(241, 255, 112, 0.33)"/>
+    
+                <Polygon
+                    coordinates={[
+                       {latitude: 51.57722789726852, longitude: -0.11025236697706796},
+                       {latitude: 51.57752793530087, longitude: -0.10937260246087407},
+                       {latitude: 51.577221229734185, longitude: -0.10914729691404394},
+                       {latitude: 51.57696119513244, longitude: -0.10982321355453437}
+                    ]}
+                      strokeColor="red"
+                        fillColor="rgba(255,0,0,0.3)"
+                        strokeWidth={2} />
+
+               
             </MapView>)}
 
+{location && (
+<Text>
+  Lat: {location.latitude.toFixed(6)} | 
+  Lon: {location.longitude.toFixed(6)} |
+  Accuracy: {location.accuracy}m
+</Text>
+)}
 
+
+
+{inBox && (
+  <Text style={{fontSize: 20, padding: 10}}>
+    You are inside the treasure zone!
+  </Text>
+)}
             
         </View>
     </View>)
