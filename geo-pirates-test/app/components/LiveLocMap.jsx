@@ -40,6 +40,8 @@ export default function LiveLocMap() {
     <View style={styles.container}>
       {location && (
         <MapView
+          // does not work - need api key or something?        
+          // provider = { MapView.PROVIDER_GOOGLE }
           style={styles.map}
           region={{
             latitude: location.latitude,
